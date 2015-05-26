@@ -1,0 +1,219 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <link rel="stylesheet" href="themes/sigorasolar1.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<style>
+
+			div#home{
+				background-color: black;
+				background-image: url("Head-shot-backdrop.jpg"); 
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: right top;
+			}
+
+			div#header {
+				width:100%;
+ 				height:100%;
+ 				margin:0;
+ 				text-align:center;
+ 				background-size: 100%;
+ 				background-color: black;
+ 				color: white;
+ 			}
+
+ 			input#calc-name {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-date {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			.specialcolor{
+ 				color:black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-irradience{
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-temperature{
+ 				background-color:white;
+ 				color: black;
+				text-shadow: none;
+ 			}
+
+ 			input#calc-modules{
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-field {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			button#do-calculate{
+ 				background-color: #F69F2C;
+ 				color: black;
+ 				text-shadow: none;
+
+
+ 			}
+
+ 			input#calc-answer{
+ 				background-color: #6bb224;
+ 				color: black;
+ 				text-shadow: none;
+
+ 			}
+
+ 			button#submit {
+ 				background-color: yellow;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			label#label{
+ 				color: white;
+ 				text-shadow: none;
+ 			}
+
+ 			div#footer {
+ 				width:100%;
+ 				height:100%;
+ 				margin:0;
+ 				text-align:center;
+ 				background-size: 100%;
+ 				background-color: black;
+ 				color: white;
+ 			}
+		</style>
+		
+    </head>
+    <body>
+
+        <div data-role="page" id="home">
+            <div data-role="header" class="header" id="header">
+                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: middle>
+                <label>PV Output Voltage Calculator</label>
+            </div>
+            <div data-role="content">
+            	<body>
+            		<form action:"info.php" method:"post">
+								<font color="white">
+								Customer Name:
+								</font>
+								<input name="calc-name" id="calc-name" type="text">
+								<br>
+								<font color="white">
+		        				Date and Time
+		        				</font>
+		        				<input name="calc-date" id="calc-date" type="text">
+								<br>
+								<font color="white" text-shadow:"none">
+								Module Type:
+								</font>
+											<select name="selectchoice" id="selectchoice" name="selectchoice" class="specialcolor">
+												<option class="specialcolor" value="0">Select</option>
+												<option class="specialcolor" value="1">QCells 265</option>
+												<option class="specialcolor" value="2">SolarWorld 315</option>
+											</select>
+								<font color="white">			
+								String ID:
+								</font>
+											<select name="selectchoice2" id="selectchoice2" name="selectchoice2" class="specialcolor">
+												<option class="specialcolor" value="0a">Select</option>
+												<option class="specialcolor" value="1a">A1</option>
+												<option class="specialcolor" value="2a">A2</option>
+												<option class="specialcolor" value="3a">B1</option>
+												<option class="specialcolor" value="4a">B2</option>
+											</select>
+								<br>
+								<font color="white">
+		        				Irradiance (Watts/meters<sup>2</sup>):
+		        				</font>
+		        				<input name="calc-irradience" id="calc-irradience" type="text">
+								<br>
+								<font color="white">
+								Temperature (&degC): 
+								</font>
+								<input name="calc-temperature" id="calc-temperature" type="text">
+								<br>
+								<font color="white">
+								Number of Modules: 
+								</font>
+								<input name="calc-modules" id="calc-modules" type="text">
+								<br>
+								<button id="do-calculate" type="button"><h3>CALCULATE</h3></button>
+								<br>
+								<font color="white">
+								Theoretical Voltage: 
+								</font>
+								<input name="calc-answer" id="calc-answer" type="text" >
+								<font color="white">
+								Field Measure Voltage: 
+								</font>
+								<input name="calc-field" id="calc-field" type="text">
+								<br>
+								<button name="submit" id="submit" type="submit"><h3>SUBMIT</h3></button>
+								<br>
+					</form>
+					<script type="text/javascript"> 
+
+function handleCalculate() {
+	var selectchoice = document.getElementById('selectchoice').value;
+    var irradience = parseFloat(document.getElementById('calc-irradience').value);
+    var temperature = parseFloat(document.getElementById('calc-temperature').value);
+    var modules = parseFloat(document.getElementById('calc-modules').value);
+    var answer = solve(irradience, temperature, modules);
+    document.getElementById('calc-answer').value = answer.toString();
+}
+
+window.onload = function () { // when the window has loaded
+    document.getElementById('do-calculate').addEventListener('click', handleCalculate);
+}
+
+function solve(irradience, temperature, modules) { 
+
+	if (selectchoice.value == 1) 
+
+    return 30.79 * modules * (irradience / 1000) * (1 + (-0.0042 * (temperature - 25)));
+
+	else if (selectchoice.value == 2)
+
+	return 36.8 * modules * (irradience / 1000) * (1 + (-0.0043 * (temperature - 25)));
+		
+	else 
+
+	return null
+};
+
+					</script>
+				</body>
+			</div>
+			<div data-role="footer" class="footer" id="footer">
+				<label> Property of Sigora Sigora LLC. </label>
+                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: middle>
+            </div>	
+        </div>
+</html>
