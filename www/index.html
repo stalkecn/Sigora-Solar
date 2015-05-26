@@ -135,8 +135,8 @@
 								</font>
 											<select name="selectchoice" id="selectchoice" name="selectchoice" class="specialcolor" form="form">
 												<option class="specialcolor" value="0">Select</option>
-												<option class="specialcolor" value="1">QCells 265</option>
-												<option class="specialcolor" value="2">SolarWorld 315</option>
+												<option class="specialcolor" value="Qcells 265">QCells 265</option>
+												<option class="specialcolor" value="Solar World 315">SolarWorld 315</option>
 											</select>
 								<font color="white">			
 								String ID:
@@ -195,11 +195,11 @@ window.onload = function () { // when the window has loaded
 
 function solve(irradience, temperature, modules) { 
 
-	if (selectchoice.value == 1) 
+	if (selectchoice.value == "Qcells 265") 
 
     return 30.79 * modules * (irradience / 1000) * (1 + (-0.0042 * (temperature - 25)));
 
-	else if (selectchoice.value == 2)
+	else if (selectchoice.value == "Solar World 315")
 
 	return 36.8 * modules * (irradience / 1000) * (1 + (-0.0043 * (temperature - 25)));
 		
