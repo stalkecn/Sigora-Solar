@@ -119,7 +119,7 @@
             </div>
             <div data-role="content">
             	<body>
-            		<form action:"info.php" method:"post">
+            		<form enctype="multipart/form-data" action:"info.php" method:"post" id="form">
 								<font color="white">
 								Customer Name:
 								</font>
@@ -133,7 +133,7 @@
 								<font color="white" text-shadow:"none">
 								Module Type:
 								</font>
-											<select name="selectchoice" id="selectchoice" name="selectchoice" class="specialcolor">
+											<select name="selectchoice" id="selectchoice" name="selectchoice" class="specialcolor" form="form">
 												<option class="specialcolor" value="0">Select</option>
 												<option class="specialcolor" value="1">QCells 265</option>
 												<option class="specialcolor" value="2">SolarWorld 315</option>
@@ -141,7 +141,7 @@
 								<font color="white">			
 								String ID:
 								</font>
-											<select name="selectchoice2" id="selectchoice2" name="selectchoice2" class="specialcolor">
+											<select name="selectchoice2" id="selectchoice2" name="selectchoice2" class="specialcolor" form="form">
 												<option class="specialcolor" value="0a">Select</option>
 												<option class="specialcolor" value="1a">A1</option>
 												<option class="specialcolor" value="2a">A2</option>
