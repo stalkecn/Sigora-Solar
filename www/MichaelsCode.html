@@ -1,0 +1,234 @@
+<html class="ui-mobile"><head><base href="http://tools.sigorasolar.com/apps/internal/string_voltage/">
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="viewport" content="user-scalable=no, width=device-width">
+        <link rel="stylesheet" href="themes/sigorasolar1.css">
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script><style type="text/css"></style>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<style>
+
+			div#home{
+				background-color: black;
+				background-image: url("Head-shot-backdrop.jpg"); 
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: right top;
+			}
+
+			div#header {
+				width:100%;
+ 				height:100%;
+ 				margin:0;
+ 				text-align:center;
+ 				background-size: 100%;
+ 				background-color: black;
+				color: white;
+ 			}
+
+ 			input#calc-name {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-date {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			.specialcolor{
+ 				color:black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-irradience{
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-temperature{
+ 				background-color:white;
+ 				color: black;
+				text-shadow: none;
+ 			}
+
+ 			input#calc-modules{
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-field {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			button#do-calculate{
+ 				background-color: #F69F2C;
+ 				color: black;
+ 				text-shadow: none;
+
+
+ 			}
+
+ 			input#calc-answer{
+ 				background-color: #6bb224;
+ 				color: black;
+ 				text-shadow: none;
+
+ 			}
+
+ 			button#submit {
+ 				background-color: yellow;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			label#label{
+ 				color: white;
+ 				text-shadow: none;
+ 			}
+
+ 			div#footer {
+ 				width:100%;
+ 				height:100%;
+ 				margin:0;
+ 				text-align:center;
+ 				background-size: 100%;
+ 				background-color: black;
+ 				color: white;
+ 			}
+		</style>
+    <title></title></head>
+    <body class="ui-mobile-viewport ui-overlay-a">
+
+        <div data-role="page" id="home" data-url="home" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
+            <div data-role="header" class="header ui-header ui-bar-inherit" id="header" role="banner">
+                <img src="SigoraSolarLogo.png" alt="sigorasolar" height="128" horizontal-align:"center"="" vertical-align:="" middle="">
+		<label>PV Output Voltage Calculator</label>
+            </div>
+            <div data-role="content" class="ui-content" role="main">
+            	
+            		<form action="info.php" method="post">
+			<input name="mailto" type="hidden" value="cameron.stalker"> 
+								<font color="white">
+								Customer Name:
+								</font>
+								<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="calc-name" id="calc-name" type="text"></div>
+								<br>
+								<font color="white">
+		        				Date and Time
+		        				</font>
+		        				<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="calc-date" id="calc-date" type="text"></div>
+								<br>
+								<font color="white" text-shadow:"none"="">
+								Module Type:
+								</font>
+											<div class="ui-select"><div id="selectchoice-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"><span class="specialcolor">Select</span><select name="selectchoice" id="selectchoice" class="specialcolor">
+												<option class="specialcolor" value="0">Select</option>
+												<option class="specialcolor" value="1">QCells 265</option>
+												<option class="specialcolor" value="2">SolarWorld 315</option>
+											</select></div></div>
+								<font color="white">			
+								String ID:
+								</font>
+											<div class="ui-select"><div id="selectchoice2-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"><span class="specialcolor">Select</span><select name="selectchoice2" id="selectchoice2" class="specialcolor">
+												<option class="specialcolor" value="0a">Select</option>
+												<option class="specialcolor" value="A1">A1</option>
+												<option class="specialcolor" value="A2">A2</option>
+												<option class="specialcolor" value="B1">B1</option>
+												<option class="specialcolor" value="B2">B2</option>
+											</select></div></div>
+								<br>
+								<font color="white">
+		        				Irradiance (Watts/meters<sup>2</sup>):
+		        				</font>
+		        				<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="calc-irradience" id="calc-irradience" type="text"></div>
+								<br>
+								<font color="white">
+								Temperature (°C): 
+								</font>
+								<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="calc-temperature" id="calc-temperature" type="text"></div>
+								<br>
+								<font color="white">
+								Number of Modules: 
+								</font>
+								<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="calc-modules" id="calc-modules" type="text"></div>
+								<br>
+								<button id="do-calculate" type="button" class=" ui-btn ui-shadow ui-corner-all"><h3>CALCULATE</h3></button>
+								<br>
+								<font color="white">
+								Theoretical Voltage: 
+								</font>
+								<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="calc-answer" id="calc-answer" type="text"></div>
+								<font color="white">
+								Field Measure Voltage: 
+								</font>
+								<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="calc-field" id="calc-field" type="text"></div>
+								<br>
+								<button name="submit" id="submit" type="submit" class=" ui-btn ui-shadow ui-corner-all"><h3>SUBMIT</h3></button>
+								<br>
+					</form>
+					<script type="text/javascript"> 
+
+function handleCalculate() {
+	var selectchoice = document.getElementById('selectchoice').value;
+    var irradience = parseFloat(document.getElementById('calc-irradience').value);
+    var temperature = parseFloat(document.getElementById('calc-temperature').value);
+    var modules = parseFloat(document.getElementById('calc-modules').value);
+    var answer = solve(irradience, temperature, modules);
+    document.getElementById('calc-answer').value = answer.toString();
+}
+
+window.onload = function () { // when the window has loaded
+    document.getElementById('do-calculate').addEventListener('click', handleCalculate);
+
+var monthNames = [
+        "Jan", "Feb", "Mar",
+        "April", "May", "Jun", "Jul",
+        "Aug", "Sep", "Oct",
+        "Nov", "Dec"
+    ];
+
+    var date = new Date();
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+    var timestring = date.toLocaleTimeString();
+    var datetimestring = day + " " + monthNames[monthIndex] + " " + year + " " + timestring;
+    document.getElementById('calc-date').value = datetimestring;
+}
+
+function solve(irradience, temperature, modules) { 
+
+	if (selectchoice.value == 1) 
+
+    return 30.79 * modules * (irradience / 1000) * (1 + (-0.0042 * (temperature - 25)));
+
+	else if (selectchoice.value == 2)
+
+	return 36.8 * modules * (irradience / 1000) * (1 + (-0.0043 * (temperature - 25)));
+
+	else
+
+	return null
+};
+
+					</script>
+				
+			</div>
+			<div data-role="footer" class="footer ui-footer ui-bar-inherit" id="footer" role="contentinfo">
+				<label> Property of Sigora Sigora LLC. </label>
+                <img src="SigoraSolarLogo.png" alt="sigorasolar" height="128" horizontal-align:"center"="" vertical-align:="" middle="">
+            </div>	
+        </div>
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>
