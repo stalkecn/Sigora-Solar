@@ -194,9 +194,7 @@
 								</font>
 								<input name="calc-field" id="calc-field" type="text">
 								<br>
-								<a href="#page-2">
-									<button name="submit" id="submit" type="submit"><h3>SUBMIT</h3></button>
-								</a>
+									<button name="submit" id="submit" type="submit" onClick="clickedButton()"><h3>SUBMIT</h3></button>
 								<br>
 					</form>
 					<script type="text/javascript"> 
@@ -229,36 +227,19 @@ function solve(irradience, temperature, modules) {
 	return null
 };
 
+       function clickedButton()
+            {
+
+                window.location.href = "page-2.html"
+
+            };
+
 					</script>
 				</body>
 			</div>
 			<div data-role="footer" class="footer" id="footer">
 				<label> Property of Sigora Sigora LLC. </label>
                 <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: middle>
-            </div>	
-        </div>
-
-        <div data-role="page" id="page-2" class="page">
-            <div data-role="header" class="header" name="header" id="header">
-            	<img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: "middle">
-            	<a href="page" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
-                <label>PV Output Voltage Calculator</label>
-            </div>
-
-            <div data-role="content">
-            	<body id="page2" name="page2" class="page">
-            	<center>
-            		<H1> CONGRAGULATIONS YOU HAVE SUBMITED THE PV DATA </h1>
-            			<br>
-            		<h2> Thank you for your help. <h2>
-            			<br>
-            		<h2> Have a great day </h2>
-            	</center>
-            	</body>
-            </div>
-            <div data-role="footer" class="footer" id="footer" vertically-align="bottom">
-				<label> Property of Sigora Sigora LLC. </label>
-                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: "bottom">
             </div>	
         </div>
 </html>
