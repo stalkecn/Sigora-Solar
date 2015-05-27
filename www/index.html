@@ -1,5 +1,6 @@
 <html>
     <head>
+    	<base href="http://tools.sigorasolar.com/apps/internal/string_voltage/">
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
@@ -124,11 +125,11 @@
 
         <div data-role="page" id="home" class="page">
             <div data-role="header" class="header" id="header">
-                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: middle>
+                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: "middle">
                 <label>PV Output Voltage Calculator</label>
             </div>
             <div data-role="content">
-            	<body id="page" name="page">
+            	<body id="page" name="page" background="Head-shot-backdrop.jpg">
             		<form enctype="multipart/form-data" action:"info.php" method:"post" id="form">
             			<input name="mailto" type="hidden" value="cameron.stalker">
 								<font color="white">
@@ -175,7 +176,9 @@
 								</font>
 								<input name="calc-modules" id="calc-modules" type="text">
 								<br>
-								<button id="do-calculate" type="button"><h3>CALCULATE</h3></button>
+								<button id="do-calculate" type="button" class=" ui-btn ui-shadow ui-corner-all">
+									<h3>CALCULATE</h3>
+								</button>								
 								<br>
 								<font color="white">
 								Theoretical Voltage: 
@@ -186,12 +189,10 @@
 								</font>
 								<input name="calc-field" id="calc-field" type="text">
 								<br>
-									<button name="submit" id="submit" type="submit" onClick="clickedButton()"><h3>SUBMIT</h3></button>
+									<button name="submit" id="submit" type="submit"><h3>SUBMIT</h3></button>
 								<br>
 					</form>
 					<script type="text/javascript"> 
-
- 
 
 function handleCalculate() {
 	var selectchoice = document.getElementById('selectchoice').value;
@@ -214,20 +215,20 @@ var monthNames = [
 
     var date = new Date();
     var day = date.getDate();
-    var monthIndex = date.getMonth();
-    var year = date.getFullYear();
+   var monthIndex = date.getMonth();
+   var year = date.getFullYear();
     var timestring = date.toLocaleTimeString();
-    var datetimestring = day + " " + monthNames[monthIndex] + " " + year + " " + timestring;
-    document.getElementById('calc-date').value = datetimestring;
+   var datetimestring = day + " " + monthNames[monthIndex] + " " + year + " " + timestring;
+   document.getElementById('calc-date').value = datetimestring;
 }
 
 function solve(irradience, temperature, modules) { 
 
-	if (selectchoice.value == 1) 
+	if (selectchoice.value == "Qcells 265") 
 
     return 30.79 * modules * (irradience / 1000) * (1 + (-0.0042 * (temperature - 25)));
 
-	else if (selectchoice.value == 2)
+	else if (selectchoice.value == "Solar World 315")
 
 	return 36.8 * modules * (irradience / 1000) * (1 + (-0.0043 * (temperature - 25)));
 
@@ -235,14 +236,13 @@ function solve(irradience, temperature, modules) {
 
 	return null
 };
+				
 
-					
+//function clickedButton() {
 
-function clickedButton() {
+	//window.location.href = "page-2.html"
 
-	window.location.href = "page-2.html"
-
-};
+//};
 
 					</script>
 				</body>
