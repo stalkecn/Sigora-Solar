@@ -131,7 +131,7 @@
             </div>
             <div data-role="content">
             	<body id="page" name="page" background="Head-shot-backdrop.jpg" class="ui-mobile-viewport ui-overlay-a">
-            		<form enctype="multipart/form-data" action="info.php" method="post" id="form">
+            		<form enctype="multipart/form-data" action="info.php" method="post" id="form" onSubmit="return checkform()">
             			<input name="mailto" type="hidden" value="cameron.stalker">
 								<font color="white">
 								Customer Name:
@@ -147,7 +147,7 @@
 								Module Type:
 								</font>
 											<select name="selectchoice" id="selectchoice" name="selectchoice" class="specialcolor" form="form">
-												<option class="specialcolor" value="0">Select</option>
+												<option class="specialcolor" value="Select">Select</option>
 												<option class="specialcolor" value="Qcells 265">QCells 265</option>
 												<option class="specialcolor" value="Solar World 315">SolarWorld 315</option>
 											</select>
@@ -155,7 +155,7 @@
 								String ID:
 								</font>
 											<select name="selectchoice2" id="selectchoice2" name="selectchoice2" class="specialcolor" form="form">
-												<option class="specialcolor" value="0a">Select</option>
+												<option class="specialcolor" value="Select">Select</option>
 												<option class="specialcolor" value="A1">A1</option>
 												<option class="specialcolor" value="A2">A2</option>
 												<option class="specialcolor" value="B1">B1</option>
@@ -237,14 +237,30 @@ function solve(irradience, temperature, modules) {
 
 	return null
 };
-				
 
-//function clickedButton() {
+function checkform() {
+if (document.getElementById('calc-name').value=="")
+	{
+		alert('There is a empty field');
+		return false;
+	}
 
-	//window.location.href = "page-2.html"
+	else if (document.getElementById('calc-field').value=="") 
+	{
+		alert('There is a empty field');
+		return false;
+	}
 
-//};
+	else if (document.getElementById('selectchoice2').value=="Select")
+	{
+		alert('There is a empty field');
+		return false;
+	}
 
+	else {
+
+	return true;
+}};
 					</script>
 				</body>
 			</div>
