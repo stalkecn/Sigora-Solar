@@ -200,6 +200,8 @@
 					</form>
 					<script type="text/javascript"> 
 
+ 
+
 function handleCalculate() {
 	var selectchoice = document.getElementById('selectchoice').value;
     var irradience = parseFloat(document.getElementById('calc-irradience').value);
@@ -211,34 +213,55 @@ function handleCalculate() {
 
 window.onload = function () { // when the window has loaded
     document.getElementById('do-calculate').addEventListener('click', handleCalculate);
+
+var monthNames = [
+        "Jan", "Feb", "Mar",
+        "April", "May", "Jun", "Jul",
+        "Aug", "Sep", "Oct",
+        "Nov", "Dec"
+    ];
+
+    var date = new Date();
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+    var timestring = date.toLocaleTimeString();
+    var datetimestring = day + " " + monthNames[monthIndex] + " " + year + " " + timestring;
+    document.getElementById('calc-date').value = datetimestring;
 }
 
 function solve(irradience, temperature, modules) { 
 
-	if (selectchoice.value == "Qcells 265") 
+	if (selectchoice.value == 1) 
 
     return 30.79 * modules * (irradience / 1000) * (1 + (-0.0042 * (temperature - 25)));
 
-	else if (selectchoice.value == "Solar World 315")
+	else if (selectchoice.value == 2)
 
 	return 36.8 * modules * (irradience / 1000) * (1 + (-0.0043 * (temperature - 25)));
-		
-	else 
+
+	else
 
 	return null
 };
 
-       function clickedButton()
-            {
-                window.location.href = "page-2.html"
-            };
+					
+
+function clickedButton()
+{
+	window.location.href = "page-2.html"
+};
 
 					</script>
 				</body>
 			</div>
+			<div data-role="footer" class="footer ui-footer ui-bar-inherit" id="footer" role="contentinfo">
+				<label> Property of Sigora Sigora LLC. </label>
+                <img src="SigoraSolarLogo.png" alt="sigorasolar" height="128" horizontal-align:"center"="" vertical-align:="" middle="">
+            </div>
 			<div data-role="footer" class="footer" id="footer">
 				<label> Property of Sigora Solar LLC. </label>
-                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: middle>
+                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: "middle">
             </div>	
             <div class="ui-loader ui-corner-all ui-body-a ui-loader-default">
             	<span class="ui-icon-loading">
