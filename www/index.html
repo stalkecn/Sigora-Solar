@@ -166,11 +166,11 @@
 												<option class="specialcolor" value="B1">B1</option>
 												<option class="specialcolor" value="B2">B2</option>
 											</select>
-								<br>
+								<!--<br>
 								<font color="white">
 		        				Irradiance (Watts/meters<sup>2</sup>):
 		        				</font>
-		        				<input name="calc-irradience" id="calc-irradience" type="text">
+		        				<input name="calc-irradience" id="calc-irradience" type="text">-->
 								<br>
 								<font color="white">
 								Temperature (&degC): 
@@ -232,11 +232,11 @@ function solve(irradience, temperature, modules) {
 
 	if (selectchoice.value == "Qcells 265") 
 
-    return 30.79 * modules * (irradience / 1000) * (1 + (-0.0042 * (temperature - 25)));
+    return 30.79 * modules * (1 + (-0.0042 * (temperature - 25)));
 
 	else if (selectchoice.value == "Solar World 315")
 
-	return 36.8 * modules * (irradience / 1000) * (1 + (-0.0043 * (temperature - 25)));
+	return 36.8 * modules * (1 + (-0.0043 * (temperature - 25)));
 
 	else
 
