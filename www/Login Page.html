@@ -1,0 +1,162 @@
+<html class="ui-mobile">
+    <head>
+    	<base href="http://tools.sigorasolar.com/apps/internal/string_voltage/">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <link rel="stylesheet" href="themes/sigorasolar1.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<style type="text/css">
+
+			div#home{
+				background-color: black;
+				background-image: url(Sigora-Background-Small.JPG); 
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: right top;
+			}
+			div#page-2{
+				background-color: black;
+				background-image: url(Sigora-Background-Small.JPG); 
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: right top;
+				color: white;
+			}
+			div#header {
+				width:100%;
+ 				height:100%;
+ 				margin:0;
+ 				text-align:center;
+ 				background-size: 100%;
+ 				background-color: black;
+ 				color: white;
+ 			}
+
+ 			input#calc-name {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-date {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			.specialcolor{
+ 				color:black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-irradience{
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-temperature{
+ 				background-color:white;
+ 				color: black;
+				text-shadow: none;
+ 			}
+
+ 			input#calc-modules{
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			input#calc-field {
+ 				background-color:white;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			button#do-calculate{
+ 				background-color: #F69F2C;
+ 				color: black;
+ 				text-shadow: none;
+
+
+ 			}
+
+ 			input#calc-answer{
+ 				background-color: #6bb224;
+ 				color: black;
+ 				text-shadow: none;
+
+ 			}
+
+ 			button#submit {
+ 				background-color: yellow;
+ 				color: black;
+ 				text-shadow: none;
+ 			}
+
+ 			label#label{
+ 				color: white;
+ 				text-shadow: none;
+ 			}
+
+ 			div#footer {
+ 				width:100%;
+ 				height:100%;
+ 				margin:0;
+ 				text-align:center;
+ 				background-size: 100%;
+ 				background-color: black;
+ 				color: white;
+ 			}
+
+ 			body#page2{
+ 				text-align: center;
+ 			}
+		</style>
+		
+    </head>
+    <body>
+
+        <div data-role="page" id="home" class="page">
+            <div data-role="header" class="header" id="header">
+                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: "middle">
+                <label>Login Page</label>
+            </div>
+            <div data-role="content">
+            	<body id="page" name="page" background="Sigora-Background-Small.JPG" class="ui-mobile-viewport ui-overlay-a">
+            <form name="login">
+            	<font color="white">
+	            Username<input type="text" name="userid"/>
+	            <font color="white">
+	            Password<input type="password" name="pswrd"/>
+	            <input type="button" onclick="check(this.form)" value="Login"/>
+	            <input type="reset" value="Cancel"/>
+        	</form>
+        <script language="javascript">
+function check(form) { /*function to check userid & password*/
+ /*the following code checkes whether the entered userid and password are matching*/
+if(form.userid.value == "SigoraSolarPVCalc" && form.pswrd.value == "solarenergy") {
+window.open('index.html')/*opens the target page while Id & password matches*/
+}
+else {
+alert("Error Password or Username")/*displays error message*/
+]};
+        </script>
+
+
+        	</div>
+    </body>
+            <div data-role="footer" class="footer" id="footer">
+				<label> Property of Sigora Solar LLC. </label>
+                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: "middle">
+            </div>	
+</div>
+        </div>
+</html>
