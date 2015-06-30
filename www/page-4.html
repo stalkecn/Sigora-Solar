@@ -13,19 +13,20 @@
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <style type="text/css">
 
-            div#home{
-                background-color: black;
-                background-image: url(Sigora-Background-Small.JPG); 
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-                background-position: right top;
-            }
-div#page-2{
+           div#home1{
                 background-color: black;
                 background-image: url("Head-shot-backdrop.jpg"); 
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: right top;
+            }
+            div#page-2{
+                background-color: black;
+                background-image: url(Sigora-Background-Small.JPG); 
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-position: right top;
+                color: white;
             }
             div#header {
                 width:100%;
@@ -127,19 +128,41 @@ div#page-2{
                 text-align: center;
             }
         </style>
-        <div data-role="page" id="page-2" class="page">
-            <div data-role="header" class="header" name="header" id="header">
-                <img src="SigoraSolarLogo.png" alt="sigorasolar"  height="128" horizontal-align:"center" vertical-align: "middle">
+         <body class="ui-mobile-viewport ui-overlay-a">
+
+        <div data-role="page" id="home1" data-url="home" tabindex="0" >
+            <div data-role="header"  id="header" role="banner">
+                <img src="SigoraSolarLogo.png" alt="sigorasolar" height="128" horizontal-align:"center"="" vertical-align:="" middle="">
             <a href="Page.html" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-                <label>PV Output Voltage Calculator</label>
+
+        <label>Field Measured Values</label>
             </div>
-            <div data-role="content">
-            	<body id="page2" name="page2" class="page">
-            	<center>
-            		<h1> CONGRATULATIONS YOU HAVE SUBMITTED THE PV DATA </h1>
-            			<br>
-            		<h2> Have a great day! </h2>
-            	</center>
+            <div data-role="content" class="ui-content" role="main">
+                
+                    <form action="info.php" method="post">
+            <input name="mailto" type="hidden" value="cameron.stalker"> 
+                                <font color="white">
+                                Field Measured Open Circuit Voltage
+                                </font>
+                                <div ><input name="fieldvoc" id="fieldvoc" type="text"></div>
+                                <br>
+                                <font color="white">
+                                Field Measured Maximum Power Voltage
+                                </font>
+                                <div><input name="fieldvmp" id="fieldvmp" type="text"></div>
+                                <br>
+                                <font color="white">
+                                Field Measured Short Circuit Amperage
+                                </font>
+                                <div><input name="fieldisc" id="fieldisc" type="text"></div>
+                                <br>
+                                <font color="white">
+                                Field Measured Maximum Power Amperage
+                                </font>
+                                <div><input name="fieldisc" id="fieldisc" type="text"></div>
+                                <br>
+                                <button name="submit" id="submit" type="submit"><h3>SUBMIT</h3></button>
+                                <br>
             	</body>
             </div>
             <div data-role="footer" class="footer" id="footer" vertically-align="bottom">

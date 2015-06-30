@@ -115,9 +115,7 @@
         <div data-role="page" id="home" data-url="home" tabindex="0" class="ui-page ui-page-theme-a ui-page-active">
             <div data-role="header" class="header ui-header ui-bar-inherit" id="header" role="banner">
                 <img src="SigoraSolarLogo.png" alt="sigorasolar" height="128" horizontal-align:"center"="" vertical-align:="" middle="">
-                                <a href="Page.html" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-
-		<label>PV Open Circuit Voltage Calculator</label>
+		<label>PV Short Circuit Amperage Calculator</label>
             </div>
             <div data-role="content" class="ui-content" role="main">
             	
@@ -163,7 +161,7 @@
 								<div ><input name="calc-temperature" id="calc-temperature" type="text"></div>
 								<br>
 								<font color="white">
-								Number of Modules: 
+								Number of Strings: 
 								</font>
 								<div><input name="calc-modules" id="calc-modules" type="text"></div>
 								<br>
@@ -208,35 +206,12 @@ var monthNames = [
 }
 function solve(irradience, temperature, modules) { 
 	if (selectchoice.value == 1) 
-    return (Math.round(38.52 * modules * (1 + (0.06 * (Math.log(irradience / 1000)))) * (1 + (-0.003 * (temperature - 25))).toFixed(2)));
+    return 8.69 * modules * (irradience / 1000) * (1 + (0.0004 * (temperature - 25)));
 	else if (selectchoice.value == 2)
-	return (Math.round(45.9 * modules * (1 + (0.06 * (Math.log(irradience / 1000)))) * (1 + (-0.00304 * (temperature - 25))).toFixed(2)));
+	return 8.63 * modules * (irradience / 1000) * (1 + (-0.00042 * (temperature - 25)));
 	else
 	return null
 };
-function checkform() {
-if (document.getElementById('calc-name').value=="")
-	{
-		alert('There is a empty field');
-		return false;
-	}
-
-	else if (document.getElementById('calc-field').value=="") 
-	{
-		alert('There is a empty field');
-		return false;
-	}
-
-	else if (document.getElementById('selectchoice2').value=="Select")
-	{
-		alert('There is a empty field');
-		return false;
-	}
-
-	else {
-
-	return true;
-}}; 
 					</script>
 				
 			</div>
@@ -251,4 +226,5 @@ if (document.getElementById('calc-name').value=="")
 	<h1>loading</h1>
 </div>
 </body>
+</html>
 </html>
